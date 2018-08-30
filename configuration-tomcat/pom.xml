@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.salgar.configuration</groupId>
+        <artifactId>configuration</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>configuration-tomcat</artifactId>
+    <name>configuration-tomcat</name>
+    <packaging>war</packaging>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.tomcat.maven</groupId>
+                <artifactId>tomcat7-maven-plugin</artifactId>
+                <version>2.2</version>
+                <configuration>
+                    <path>/${project.build.finalName}</path>
+                    <port>7777</port>
+                    <ajpPort>7019</ajpPort>
+                    <useSeperateTomcatClassLoader>false</useSeperateTomcatClassLoader>
+                    <systemProperties>
+                        <!--http://localhost:8989/configuration-server-1.0-SNAPSHOT/configuration -->
+                        <configuration.server.url>http://localhost:8888</configuration.server.url>
+                        <org.salgar.configurationserver.propertyfile>C:\wss\client.yml</org.salgar.configurationserver.propertyfile>
+                    </systemProperties>
+                    <webapps>
+                        <webapp>
+                            <groupId>org.salgar.configuration</groupId>
+                            <artifactId>configuration-refresher</artifactId>
+                            <version>1.0-SNAPSHOT</version>
+                            <type>war</type>
+                            <asWebapp>true</asWebapp>
+                            <contextPath>refresher</contextPath>
+                        </webapp>
+                        <webapp>
+                            <groupId>org.salgar.configuration</groupId>
+                            <artifactId>configuration-driver</artifactId>
+                            <version>1.0-SNAPSHOT</version>
+                            <type>war</type>
+                            <asWebapp>true</asWebapp>
+                            <contextPath>driver</contextPath>
+                        </webapp>
+                    </webapps>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+    <dependencies>
+        <dependency>
+            <groupId>com.netflix.hystrix</groupId>
+            <artifactId>hystrix-javanica</artifactId>
+            <version>1.4.14</version>
+        </dependency>
+    </dependencies>
+</project>

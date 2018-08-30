@@ -1,0 +1,35 @@
+stageall:
+ environment01:
+  serviceUrl:
+   'instance01': https://192.168.107.16/api/v0/orderApplication
+   'instance02': https://192.168.107.17/api/v0/orderApplication
+   'instance03': https://192.168.107.18/api/v0/orderApplication
+   'instance04': https://192.168.107.19/api/v0/orderApplication
+   'instance05': https://192.168.107.20/api/v0/orderApplication
+
+stage01:
+ environment01:
+  serviceUrl:
+   'instance01': https://140.18.159.16/api/v0/orderApplication
+   'instance02': https://140.18.159.17/api/v0/orderApplication
+   'instance03': https://140.18.159.18/api/v0/orderApplication
+   'instance04': https://140.18.159.19/api/v0/orderApplication
+   'instance05': https://140.18.159.20/api/v0/orderApplication
+   
+ environment02:
+  serviceUrl:
+   'instance01': https://environment02.server.xxx/api/v0/orderApplication
+   'instance02': https://environment02.server.xxx/api/v0/orderApplication
+   'instance03': https://environment02.server.xxx/api/v0/orderApplication
+   'instance04': https://environment02.server.xxx/api/v0/orderApplication
+   'instance05': https://environment02.server.xxx/api/v0/orderApplication
+
+stage02:
+ environment01:
+  serviceUrl:
+   'instance01': https://119.108.55.16/api/v0/orderApplication
+   'instance02': https://119.108.55.17/api/v0/orderApplication
+   'instance03': https://119.108.55.18/api/v0/orderApplication
+   'instance04': https://119.108.55.20/api/v0/orderApplication
+   'instance05': https://119.108.55.21/api/v0/orderApplication
+
