@@ -1,0 +1,11 @@
+spring:
+  cloud:
+    config:
+      server:
+        native:
+          searchLocations: file:///Volumes/Data/config
+  profiles:
+    active: native
+
+server:
+  port: 8888
