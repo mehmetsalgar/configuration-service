@@ -23,7 +23,6 @@
 		<module>configuration-scope</module>
 		<module>configuration-driver</module>
 		<module>configuration-tomcat</module>
-    <module>configuration-cloud-server</module>
   </modules>
 	
 	<build>
@@ -49,4 +48,21 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+
+    <profiles>
+        <profile>
+            <id>docker</id>
+            <modules>
+                <module>configuration-api</module>
+                <module>configuration-yaml</module>
+                <module>configuration-client</module>
+                <module>configuration-core</module>
+                <module>configuration-refresher</module>
+                <module>configuration-scope</module>
+                <module>configuration-driver</module>
+                <module>configuration-tomcat</module>
+                <module>configuration-cloud-server</module>
+            </modules>
+        </profile>
+    </profiles>
 </project>

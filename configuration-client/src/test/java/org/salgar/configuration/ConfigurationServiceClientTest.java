@@ -9,15 +9,12 @@ import org.testng.annotations.Test;
 @ContextConfiguration(locations = {"classpath:/META-INF/spring/client/applicationContext.xml"})
 //, initializers = {ConfigurationServerPropertySourceInitializer.class}
 public class ConfigurationServiceClientTest extends AbstractTestNGSpringContextTests {
-    @Autowired
-    Victim someVictim;
 
 
     @Test(enabled = false)
     public void loadConfiguration() {
         //ConfigurationServiceClient configurationServiceClient = new ConfigurationServiceClient();
         //configurationServiceClient.loadConfigurationValue();
-        String test = someVictim.getTestProperty();
         System.out.println("test");
     }
 }
